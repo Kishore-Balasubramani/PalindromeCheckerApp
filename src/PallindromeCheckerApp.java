@@ -6,5 +6,20 @@ public class PallindromeCheckerApp {
         System.out.println("Version : " +App_version);
         System.out.println("System initialized successfully.");
     }
+    String str = new String("madam");
+    String isPalindrome = new String("True");
+    int j = str.length();
+    // UC2
+      for (int i = 0; i < str.length() / 2; i++) {
+           j = j - 1;
+           if (str.charAt(i) != str.charAt(j)) {
+                isPalindrome = "False";
+            }
+       }
+        if (isPalindrome.equals("True")) {
+           System.out.println("Is it a palindrome?: True");
+        }else{
+            System.out.println("Is it a palindrome?: False");
+       }
 
 }
