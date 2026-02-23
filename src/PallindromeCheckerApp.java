@@ -54,6 +54,25 @@ public class PallindromeCheckerApp {
             System.out.println("Is it a palindrome?: False");
         }
 
+        //UC6
+        boolean isPalindrome= true;
+        Queue<Character> charqueue = new LinkedList<>();
+        Stack<Character> charstack= new Stack<>();
+        for(char c:str.toCharArray()){
+            charstack.push(c);
+        }
+        for(char c:str.toCharArray()){
+            charqueue.offer(c);
+        }
+        while(!charstack.isEmpty() && !charqueue.isEmpty()){
+            char stackelement=charstack.pop();
+            char queueelement=charqueue.poll();
+            if(stackelement !=(queueelement)){
+                isPalindrome=false;
+                break;
+            }
+        }
+
 
     }
 
