@@ -40,6 +40,21 @@ public class PallindromeCheckerApp {
         }
 
 
+        Stack<Character> charstack= new Stack<>();
+        for(char c:str.toCharArray()){
+           charstack.push(c);
+        }
+        String rev=new String("");
+        while (!charstack.isEmpty()) {
+            rev += charstack.pop();
+        }
+        if(str.equals(rev)){
+            System.out.println("Is it a palindrome?: True");
+        }else{
+            System.out.println("Is it a palindrome?: False");
+        }
+
+
     }
 
 
