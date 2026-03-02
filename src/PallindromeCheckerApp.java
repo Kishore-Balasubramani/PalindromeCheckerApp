@@ -76,26 +76,52 @@ public class PallindromeCheckerApp {
 //        }
 
         //UC7
-        Deque<Character> deque = new LinkedList<>();
+//        Deque<Character> deque = new LinkedList<>();
+//
+//        String str = new String("madam");
+//        boolean isPalindrome = true;
+//
+//
+//        for(char ch : str.toLowerCase().toCharArray()){
+//            deque.addLast(ch);
+//        }
+//        while(deque.size()>1){
+//            if(!deque.removeFirst().equals(deque.removeLast())){
+//                isPalindrome = false;
+//            }
+//        }
+//        if(isPalindrome){
+//            System.out.println("Is it a palindrome?: True");
+//        }
+//        else{
+//            System.out.println("Is it a palindrome?: false");
+//        }
+
+        //UC8
+
+        LinkedList<Character> LinkedList = new LinkedList<>();
 
         String str = new String("madam");
-        boolean isPalindrome = true;
+        boolean   isPalindrome = true;
 
-
-        for(char ch : str.toLowerCase().toCharArray()){
-            deque.addLast(ch);
+        for(char ch: str.toLowerCase().toCharArray()){
+            LinkedList.addLast(ch);
         }
-        while(deque.size()>1){
-            if(!deque.removeFirst().equals(deque.removeLast())){
+        while(LinkedList.size()>1){
+            if(!LinkedList.removeFirst().equals(LinkedList.removeLast())){
                 isPalindrome = false;
             }
         }
+
         if(isPalindrome){
             System.out.println("Is it a palindrome?: True");
         }
         else{
             System.out.println("Is it a palindrome?: false");
         }
+
+
+
 
 
 
