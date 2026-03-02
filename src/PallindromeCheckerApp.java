@@ -99,38 +99,55 @@ public class PallindromeCheckerApp {
 
         //UC8
 
-        LinkedList<Character> LinkedList = new LinkedList<>();
+//        LinkedList<Character> LinkedList = new LinkedList<>();
+//
+//        String str = new String("madam");
+//        boolean   isPalindrome = true;
+//
+//        for(char ch: str.toLowerCase().toCharArray()){
+//            LinkedList.addLast(ch);
+//        }
+//        while(LinkedList.size()>1){
+//            if(!LinkedList.removeFirst().equals(LinkedList.removeLast())){
+//                isPalindrome = false;
+//            }
+//        }
+//
+//        if(isPalindrome){
+//            System.out.println("Is it a palindrome?: True");
+//        }
+//        else{
+//            System.out.println("Is it a palindrome?: false");
+//        }
 
-        String str = new String("madam");
-        boolean   isPalindrome = true;
+        //UC9
+        String str = "Racecar";
+        str = str.toLowerCase().replaceAll("\\s+", ""); // ignore spaces and case
 
-        for(char ch: str.toLowerCase().toCharArray()){
-            LinkedList.addLast(ch);
-        }
-        while(LinkedList.size()>1){
-            if(!LinkedList.removeFirst().equals(LinkedList.removeLast())){
-                isPalindrome = false;
-            }
-        }
+        boolean result = isPalindrome(str, 0, str.length() - 1);
 
-        if(isPalindrome){
+        if (result) {
             System.out.println("Is it a palindrome?: True");
+        } else {
+            System.out.println("Is it a palindrome?: False");
         }
-        else{
-            System.out.println("Is it a palindrome?: false");
-        }
-
-
-
-
-
-
-
-
 
 
 
     }
+    public static boolean isPalindrome(String s, int start, int end) {
+        if (start >= end) return true;
+        if (s.charAt(start) != s.charAt(end)) return false;
+        return isPalindrome(s, start + 1, end - 1);
+        }
+
+
+
+
+
+
+
+
 
 
 
