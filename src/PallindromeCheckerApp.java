@@ -121,39 +121,54 @@ public class PallindromeCheckerApp {
 //        }
 
         //UC9
-        String str = "Racecar";
-        str = str.toLowerCase().replaceAll("\\s+", ""); // ignore spaces and case
+//        String str = "Racecar";
+//        str = str.toLowerCase().replaceAll("\\s+", ""); // ignore spaces and case
+//
+//        boolean result = isPalindrome(str, 0, str.length() - 1);
+//
+//        if (result) {
+//            System.out.println("Is it a palindrome?: True");
+//        } else {
+//            System.out.println("Is it a palindrome?: False");
+//        }
+        //UC10
+        String str = new String("My name is Billa");
+        String processed = str.toLowerCase().replaceAll("[^a-zA-z0-9]","");
+        String rev = new StringBuilder(processed).reverse().toString();
 
-        boolean result = isPalindrome(str, 0, str.length() - 1);
-
-        if (result) {
+        if(processed.equals(rev)){
             System.out.println("Is it a palindrome?: True");
-        } else {
-            System.out.println("Is it a palindrome?: False");
         }
+        else {
+            System.out.println("Is it a palindrome?: False");
+
+        }
+
+
+
 
 
 
     }
-    public static boolean isPalindrome(String s, int start, int end) {
-        if (start >= end) return true;
-        if (s.charAt(start) != s.charAt(end)) return false;
-        return isPalindrome(s, start + 1, end - 1);
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //public static boolean isPalindrome(String s, int start, int end) {
+        //if (start >= end) return true;
+        //       if (s.charAt(start) != s.charAt(end)) return false;
+//        return isPalindrome(s, start + 1, end - 1);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
