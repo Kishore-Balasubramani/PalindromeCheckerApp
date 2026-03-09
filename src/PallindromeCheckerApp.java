@@ -183,28 +183,49 @@ public class PallindromeCheckerApp {
         //       if (s.charAt(start) != s.charAt(end)) return false;
 //        return isPalindrome(s, start + 1, end - 1);
 // UC12
- String text = scanner.nextLine();
+//  String text = scanner.nextLine();
 
-        System.out.println("Choose algorithm:");
-        System.out.println("1 - Stack");
-        System.out.println("2 - Deque");
+//         System.out.println("Choose algorithm:");
+//         System.out.println("1 - Stack");
+//         System.out.println("2 - Deque");
 
-        int choice = scanner.nextInt();
-        PalindromeStrategy strategy;
+//         int choice = scanner.nextInt();
+//         PalindromeStrategy strategy;
 
         
-        if (choice == 1) {
-            strategy = new StackStrategy();
-        } else {
-            strategy = new DequeStrategy();
+//         if (choice == 1) {
+//             strategy = new StackStrategy();
+//         } else {
+//             strategy = new DequeStrategy();
+//         }
+
+//         boolean result = strategy.isPalindrome(text);
+//         System.out.println("Is it a palindrome?: " + result);
+//UC13
+String testString = "My name is Billa";
+
+        PalindromeStrategy[] strategies = {
+            new StackStrategy(),
+            new DequeStrategy()
+            // Add more strategies if you want
+        };
+
+        for (PalindromeStrategy strategy : strategies) {
+            long startTime = System.nanoTime();
+            boolean isPalindrome = strategy.isPalindrome(testString);
+            long endTime = System.nanoTime();
+
+            long duration = endTime - startTime; // duration in nanoseconds
+
+            System.out.println(strategy.getClass().getSimpleName() + ":");
+            System.out.println("  Result: " + isPalindrome);
+            System.out.println("  Time taken (ns): " + duration);
+            System.out.println();
         }
 
-        boolean result = strategy.isPalindrome(text);
-        System.out.println("Is it a palindrome?: " + result);
+     }
+ }
 
-
-    }
-}
 
 
 
