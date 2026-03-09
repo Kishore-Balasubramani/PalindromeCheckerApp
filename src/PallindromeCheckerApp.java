@@ -1,6 +1,7 @@
 import java.util.*;
+import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.LinkedList;
+import java.util.Stack;
 public class PallindromeCheckerApp {
     private static final String App_version = "1.0";
 
@@ -145,43 +146,83 @@ public class PallindromeCheckerApp {
 //        }
 
        //UC11
-        String str = new String("civic");
+    //     String str = new String("civic");
 
-        String processed = preprocess(str);
-        boolean result = isPalindrome(processed);
+    //     String processed = preprocess(str);
+    //     boolean result = isPalindrome(processed);
 
-        printResult(result);
-
-
+    //     printResult(result);
 
 
 
-    }
-    private static String preprocess(String str) {
-        return str.toLowerCase().replaceAll("[^a-z0-9]", "");
-    }
-    private static boolean isPalindrome(String str) {
-        int start = 0;
-        int end = str.length() - 1;
 
-        while (start < end) {
-            if (str.charAt(start) != str.charAt(end)) {
-                return false;
-            }
-            start++;
-            end--;
-        }
-        return true;
-    }
-    private static void printResult(boolean result) {
-        System.out.println(result ? "Palindrome" : "Not a Palindrome");
-    }
+
+    // }
+    // private static String preprocess(String str) {
+    //     return str.toLowerCase().replaceAll("[^a-z0-9]", "");
+    // }
+    // private static boolean isPalindrome(String str) {
+    //     int start = 0;
+    //     int end = str.length() - 1;
+
+    //     while (start < end) {
+    //         if (str.charAt(start) != str.charAt(end)) {
+    //             return false;
+    //         }
+    //         start++;
+    //         end--;
+    //     }
+    //     return true;
+    // }
+    // private static void printResult(boolean result) {
+    //     System.out.println(result ? "Palindrome" : "Not a Palindrome");
+    // }
 
     //public static boolean isPalindrome(String s, int start, int end) {
         //if (start >= end) return true;
         //       if (s.charAt(start) != s.charAt(end)) return false;
 //        return isPalindrome(s, start + 1, end - 1);
+// UC12
+ String text = scanner.nextLine();
+
+        System.out.println("Choose algorithm:");
+        System.out.println("1 - Stack");
+        System.out.println("2 - Deque");
+
+        int choice = scanner.nextInt();
+        PalindromeStrategy strategy;
+
+        
+        if (choice == 1) {
+            strategy = new StackStrategy();
+        } else {
+            strategy = new DequeStrategy();
+        }
+
+        boolean result = strategy.isPalindrome(text);
+        System.out.println("Is it a palindrome?: " + result);
+
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+    
+
 
 
 
